@@ -1,1 +1,49 @@
-<p>visualiza-evento works!</p>
+<div class="row">
+    <div class="col-sm-5" >
+        <h1>{{ hoje | date:'fullDate' }} </h1>
+      
+        <p><em>Mussum Ipsum, cacilds vidis litro abertis. Nulla id gravida magna, ut semper sapien. Quem manda na minha terra sou euzis! Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.</em></p>
+    </div>
+    <div class="col-sm-7 my-4">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Agenda de {{ hoje | date:'MMMM, y' }} </th>
+                    
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr class="table-danger" *ngFor="let item of listaAgendas"> 
+                    <td>
+                      {{item.data | date: 'EEEE, d'}} - <fa-icon style="font-size: 18px;" [icon] ="faClock"></fa-icon> {{item.horaInicio}} até {{item.horaFim}} - {{item.titulo}} <br>
+                      <fa-icon style="font-size: 18px;" [icon] ="faStreetView"></fa-icon> {{item.local}} - {{item.descricao}} 
+                    </td> 
+                  </tr>
+                 
+                </tbody>
+              </table>
+              <br>
+              <h6>Sistemas</h6>
+              <hr>
+              <div class="row ">
+                <div class="col-sm-4">
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-secondary btn-sm"><fa-icon style="font-size: 32px;" [icon] ="faCarSide"></fa-icon></a>
+                  </div>
+                </div>
+                <div class="col-sm-4 ">
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-secondary btn-sm"><fa-icon style="font-size: 32px;" [icon] ="faChartBar"></fa-icon></a>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-secondary btn-sm"><fa-icon style="font-size: 32px;" [icon] ="faKey"></fa-icon></a>
+                  </div>
+                </div>
+              </div>  
+        </div>
+    </div>
+</div>    
+
